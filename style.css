@@ -1,0 +1,432 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,400&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 12vh;
+  border: 1px solid rgb(189, 177, 177);
+  padding: 0 110px 0 140px;
+  box-shadow: 0 15px 40px -20px rgba(40, 44, 63, 0.15);
+}
+
+.logo-container img {
+  width: 88px;
+  border-radius: 38%;
+}
+
+.nav-list ul {
+  display: flex;
+  list-style: none;
+  gap: 5px;
+}
+
+.nav-list ul li {
+  margin-right: 45px;
+  /* font-size: large; */
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-list ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-list ul li:hover,
+.nav-list ul li a:hover {
+  color: #ff5200;
+}
+
+.body {
+  margin: 50px 0px;
+}
+
+.body hr {
+  border: 1px solid rgba(#02060c38);
+  margin-top: 30px;
+}
+
+.body h3 {
+  font-weight: bolder;
+  font-size: 18px;
+}
+
+.filter-widget{
+  border-right: 1px solid #d0d5db;
+}
+
+.filter-widget h3{
+  padding: 30px 0 30px 10px;
+  border-bottom: 1px solid rgb(129, 122, 122);
+}
+
+.filter-widget ul {
+  /* display: flex; */
+  list-style-type: none;
+  /* margin-top: 50px; */
+}
+
+.filter-widget ul li {
+  cursor: pointer;
+  /* margin: 0px 8px 0px 0px; */
+  padding: 20px 10px;
+  border-bottom: 1px solid rgb(129, 122, 122);
+  transition: transform 0.3s ease;
+  font-size: 14px;
+}
+
+.filter-widget ul li span{
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.filter-widget ul li:hover span{
+  transform: scale(1.05);
+}
+
+.filter-widget ul li .btn {
+  background: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.outer-wrapper {
+  /* height: 100vh; Full viewport height */
+  display: flex;
+  align-items: center; /* Vertical center */
+  justify-content: center; /* Horizontal center */
+}
+
+.card-container {
+  margin: 50px 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  place-items: center;
+  gap: 30px 20px;
+}
+
+.card-container a {
+  text-decoration: none;
+  color: rgba(2, 6, 12, 0.6);
+}
+
+.whole-card {
+  width: 300px;
+  transition: transform 0.1s ease; /* Smooth transition */
+}
+
+.whole-card:hover {
+  transform: scale(0.95);
+}
+
+.cards {
+  width: 277px;
+  height: 185px;
+}
+
+.cards img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.card-info h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 5px 0;
+  padding: 0;
+  word-spacing: 4px;
+}
+
+.card-info h3 {
+  font-size: 18px;
+  font-weight: 900;
+  color: black;
+}
+
+.card-info h4 {
+  font-size: 16px;
+  color: black;
+}
+
+.card-info h5 {
+  font-weight: 300;
+  color: rgba(2, 6, 12, 0.6);
+}
+
+.shimmer {
+  margin: 50px 110px;
+}
+
+.shimmer-card-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.shimmer-top-h3 {
+  width: 60%;
+  height: 14px;
+  border-radius: 20px;
+  background-color: #f0f0f0;
+  margin: 50px 0 0 0;
+}
+
+.shimmer-top-h5 {
+  width: 60%;
+  height: 7px;
+  border-radius: 20px;
+  background-color: #f0f0f0;
+  margin: 10px 0 50px 0;
+}
+
+.shimmer-card-img {
+  width: 227px;
+  height: 135px;
+  padding: 10px 10px 26px 10px;
+  border-radius: 20px;
+  background-color: #f0f0f0;
+}
+
+.shimmer-h3 {
+  width: 160px;
+  height: 10px;
+  border-radius: 20px;
+  background-color: #f0f0f0;
+  margin: 10px 0 0 10px;
+}
+
+.shimmer-h5 {
+  width: 110px;
+  height: 7px;
+  border-radius: 20px;
+  background-color: #f0f0f0;
+  margin: 10px 0 0 10px;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.search-container input {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 1px solid #02060c38;
+  width: 70%;
+  box-sizing: border-box;
+}
+
+.search-container input:focus {
+  border-color: #02060c80; /* a slightly darker shade you want */
+  outline: none; /* remove default outline if you want */
+  box-shadow: 0 0 1px #02060c80; /* optional: subtle glow */
+}
+
+.search-box::placeholder {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.search-btn {
+  background-color: #ff5200;
+  color: white;
+  border: 1px solid rgba(2, 6, 12, 0.2); /* same as #02060c33 */
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-weight: bold;
+  padding: 0 10px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  transition: all 0.5s ease;
+  word-spacing: 2px;
+  transition: transform 0.1s ease-in-out;
+}
+
+.search-btn:hover {
+  cursor: pointer;
+  background-color: white;
+  color: #ff5200;
+  border: 1px solid #ff5200;
+}
+
+.search-btn:active {
+  transform: scale(1.05);
+}
+
+/* .menu-card {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.menu-pname {
+  font-size: 18px;
+  font-weight: bolder;
+  margin: 0 0 5px 0;
+}
+
+.card-price {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.card-offer {
+  font-size: 12px;
+  position: absolute;
+  color: rgba(2, 6, 12, 0.75);
+}
+
+.location-icon {
+  margin: 0 -2px 0 2px;
+  position: relative;
+  top: 2px;
+  left: 2px;
+  padding: 0 2px 0 0;
+}
+
+.card-rating {
+  font-size: 13px;
+  margin: 13px 0;
+  font-weight: 600;
+}
+
+.card-rating span {
+  color: rgba(2, 6, 12, 0.75);
+  font-weight: 100;
+}
+
+.card-description {
+  color: #02060cbf;
+  margin-bottom: 18px;
+  font-size: smaller;
+  letter-spacing: 1px;
+  line-height: 19px;
+}
+
+.menu-card-container {
+  margin-top: 100px;
+}
+
+.menu-card-img img {
+  border-radius: 10px;
+}
+
+hr {
+  margin: 20px 0;
+}
+
+.about {
+  margin: 50px 25% 0;
+}
+
+.about-overview {
+  border: 1px solid #02060c38;
+  border-radius: 20px;
+  padding: 25px 15px;
+  margin: 5% 0;
+  box-shadow: -1px 11px 10px 14px #282c3f26;
+}
+
+.about-rating {
+  font-weight: 600;
+  font-size: 16px;
+  word-spacing: 2px;
+}
+
+.about-cuisines {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #ff5200;
+  font-size: 14px;
+  font-weight: bolder;
+  margin: 5px 0;
+  text-decoration-line: underline;
+}
+
+.about-outlet {
+  font-size: small;
+  margin: 5px 0;
+}
+
+.about-time {
+  font-size: small;
+  font-weight: 600;
+} */
+
+.shimmer2 {
+  margin: 50px 25% 0;
+}
+
+.shimmer2 .heading{
+  background-color: #f0f0f0;
+  width: 20%;
+  height: 30px;
+  border-radius: 20px;
+}
+
+.shimmer2 .box{
+  margin: 5% 0 7% 0;
+  padding: 60px;
+  background-color: #f0f0f0;
+  border-radius: 20px;
+}
+
+.menu-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; 
+}
+
+.menu {
+  width: 80%; /* or whatever you want */
+}
+
+.menu .heading2{
+  background-color: #f0f0f0;
+  width: 30%;
+  height: 20px;
+  border-radius: 20px;
+  margin: 7px 0;
+}
+
+.menu .price{
+  background-color: #f0f0f0;
+  width: 10%;
+  height: 20px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+
+.menu .para{
+  background-color: #f0f0f0;
+  width: 60%;
+  height: 30px;
+  border-radius: 20px;
+}
+
+.menu-container .img{
+  background-color: #f0f0f0;
+  width: 150px;
+  height: 150px;
+  border-radius: 20px;
+}
+
+.shimmer2 hr{
+  border: 1px solid #f0f0f0;
+  margin: 30px 0;
+}
