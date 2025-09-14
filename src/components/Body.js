@@ -35,7 +35,7 @@ const Body = () => {
 
       <hr className="text-gray-300"/>
       <div className="flex gap-10">
-      <div className="filter-widget w-2/12">
+      <div className="filter-widget w-2/12 sm:w-4/12">
       <h3>Restaurants with online food delivery</h3>
         <ul>
           <li onClick={() => {setFilteredRestaurants(listOfRestaurants);}}>
@@ -76,7 +76,7 @@ const Body = () => {
           </li>
         </ul>
       </div>
-      <div className="outer-wrapper w-11/12">
+      <div className="outer-wrapper w-10/12">
 
       <div className="card-container">
         {filteredRestaurants.map((res) => (

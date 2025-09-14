@@ -6,12 +6,17 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+.main-container{
+  width: fit-content;
+}
+
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 12vh;
-  border: 1px solid rgb(189, 177, 177);
+  min-height: 75px;
+  min-width: 99vw;
+  border-bottom: 1px solid rgb(189, 177, 177);
   padding: 0 110px 0 140px;
   box-shadow: 0 15px 40px -20px rgba(40, 44, 63, 0.15);
 }
@@ -429,4 +434,47 @@ hr {
 .shimmer2 hr{
   border: 1px solid #f0f0f0;
   margin: 30px 0;
+}
+
+@media (max-width: 1024px) {
+  .card-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* .about{
+    padding: 100px 0;
+  } */
+}
+
+@media (max-width: 768px) {
+  .nav-container{
+    padding: 0 20px;
+  }
+
+  .about{
+    padding: 0 110px;
+  }
+
+  .filter-widget{
+    min-width: 30vw;
+  }
+}
+
+
+@media (max-width: 425px) {
+  .nav-list ul :nth-child(7){
+    display: none;
+  }
+
+  .about{
+    padding: 30px;
+  }
+
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .filter-widget{
+    min-width: 70vw;
+  }
 }
