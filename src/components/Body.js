@@ -6,16 +6,18 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 import useRestaurants from "../utils/useFetchResList";
 
 const Body = () => {
-  const {listOfRestaurants,filteredRestaurants,setFilteredRestaurants,searchText,setSearchText} = useRestaurants();
+  const {listOfRestaurants,filteredRestaurants,setFilteredRestaurants,searchText,setSearchText,loading,error} = useRestaurants();
 
   const onlineStatus = useOnlineStatus();
   if(onlineStatus===false)return  "Looks like your offline";
 
   const RestaurantCardPromoted = withPromotedLable(Restaurant);
 
-  if (listOfRestaurants === null) {
-    return <Shimmer />;
-  }
+  if (loading) return <Shimmer/>;
+  if (error) return <p>{error}</p>;
+  // if (listOfRestaurants === null) {
+  //   return <Shimmer />;
+  // }
 
   return (
     <div className="body">

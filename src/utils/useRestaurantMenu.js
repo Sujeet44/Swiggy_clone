@@ -11,7 +11,7 @@ const useRestaurantMenu = (resId) => {
   const fetchMenu = async () => {
     try {
       const data = await fetch(
-        "http://localhost:3000/swiggy-menu?restaurantId=" + resId
+        "https://backend-swiggy-v82q.onrender.com/swiggy-menu?restaurantId=" + resId
       );
       const json = await data.json();
       // console.log(json);
