@@ -1,5 +1,15 @@
 {
   "projects": {
-    "default": "swiggyclone-85b23"
-  }
+    "default": "swiggyclone-a94f8"
+  },
+  "targets": {
+    "swiggyclone-85b23": {
+      "hosting": {
+        "swiggyTarget": [
+          "swiggyclone-a94f8"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }

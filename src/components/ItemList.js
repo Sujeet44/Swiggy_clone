@@ -1,13 +1,17 @@
 import { useDispatch } from "react-redux";
 import { IMAGE_BASE_URL } from "../utils/ConstantIMG";
-import { addItem } from "../utils/CartSlice";
+import { addItem,removeItem } from "../utils/CartSlice";
 import { useState } from "react";
 
-const ItemList=({ items })=> {
+const ItemList=({ items,showRemoveButton=false})=> {
 
   const dispatch =useDispatch();
   const handleAddItem=(item)=>{
     dispatch(addItem(item))
+  }
+
+  const handleRemoveItem=(item)=>{
+    dispatch(removeItem({ id: item.card.info.id }));
   }
   // console.log(items);
 
@@ -42,8 +46,16 @@ const ItemList=({ items })=> {
               <img className="rounded-2xl" alt="Image loading..." src={IMAGE_BASE_URL + item.card.info.imageId} style={{ objectFit: "cover", cursor: "pointer" }}
               >
               </img>
-              <button className="w-[100%] p-2 shadow-2xl border border-solid mt-1.5 px-5 py-2 rounded-xl bg-white font-extrabold text-green-700 cursor-pointer hover:bg-gray-200 transition duration-300 ease-in-out"
-               onClick={()=>handleAddItem(item)}>ADD</button> 
+              {!showRemoveButton && (
+                <button className="w-[100%] p-2 shadow-2xl border border-solid mt-1.5 px-5 py-2 rounded-xl bg-white font-extrabold text-green-700 cursor-pointer hover:bg-gray-200 transition duration-300 ease-in-out"
+                  onClick={()=>handleAddItem(item)}>ADD
+                </button> )}
+              
+               {showRemoveButton && (
+                <button className="w-[100%] p-2 shadow-2xl border border-solid mt-1.5 px-5 py-2 rounded-xl bg-white font-extrabold text-red-700 cursor-pointer hover:bg-gray-200 transition duration-300 ease-in-out"
+                 onClick={() => handleRemoveItem(item)}>
+                  REMOVE
+                </button>)}
             </div>
           </div>
           <hr className="my-7 text-gray-400 w-[95%]" />

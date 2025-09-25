@@ -6,18 +6,16 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 import useRestaurants from "../utils/useFetchResList";
 
 const Body = () => {
-  const {listOfRestaurants,filteredRestaurants,setFilteredRestaurants,searchText,setSearchText,loading,error} = useRestaurants();
+  const {listOfRestaurants,filteredRestaurants,setFilteredRestaurants,searchText,setSearchText} = useRestaurants();
 
   const onlineStatus = useOnlineStatus();
   if(onlineStatus===false)return  "Looks like your offline";
 
   const RestaurantCardPromoted = withPromotedLable(Restaurant);
 
-  if (loading) return <Shimmer/>;
-  if (error) return <p>{error}</p>;
-  // if (listOfRestaurants === null) {
-  //   return <Shimmer />;
-  // }
+  if (listOfRestaurants === null) {
+    return <Shimmer />;
+  }
 
   return (
     <div className="body">
@@ -36,8 +34,8 @@ const Body = () => {
       </div>
 
       <hr className="text-gray-300"/>
-      <div className="flex gap-10">
-      <div className="filter-widget w-2/12 sm:w-4/12">
+      <div className="flex gap-10 justify-between">
+      <div className="filter-widget w-2/12 sm:w-4/12 2xl:w-2/12">
       <h3>Restaurants with online food delivery</h3>
         <ul>
           <li onClick={() => {setFilteredRestaurants(listOfRestaurants);}}>
@@ -78,7 +76,7 @@ const Body = () => {
           </li>
         </ul>
       </div>
-      <div className="outer-wrapper w-10/12">
+      <div className="outer-wrapper w-10/12 2xl:w-11/12">
 
       <div className="card-container">
         {filteredRestaurants.map((res) => (
